@@ -5,7 +5,10 @@ gcc ./caller/caller.c
 
 resourceInfo="$(sudo bash ./scripts/agent.sh)"
 
-registryIp=$(awk '/^ip/{print $3}' config.conf)
-registryPort=$(awk '/^port/{print $3}' config.conf)
+registryIp="$(awk '/^ip/{print $3}' config.conf)"
+registryPort="$(awk '/^port/{print $3}' config.conf)"
 
-./a.out 127.0.0.1 3000 POST /registerResource $(resourceInfo) "Content-Type: application/json"
+echo "$(registryIp)"
+echo "$(registryPort)"
+
+./a.out "$(registryIp)" "$(registryPort)" 3000 POST /registerResource "$(resourceInfo)" "Content-Type: application/json"
