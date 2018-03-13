@@ -8,7 +8,4 @@ resourceInfo="$(sudo bash ./scripts/agent.sh)"
 registryIp="$(awk '/^ip/{print $3}' config.conf)"
 registryPort="$(awk '/^port/{print $3}' config.conf)"
 
-echo "$(registryIp)"
-echo "$(registryPort)"
-
-./a.out "$(registryIp)" "$(registryPort)" 3000 POST /registerResource "$(resourceInfo)" "Content-Type: application/json"
+./a.out $registryIp $registryPort POST /registerResource $resourceInfo "Content-Type: application/json"
