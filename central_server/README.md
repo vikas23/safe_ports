@@ -74,5 +74,4 @@ LOG_FILE_NAME -- filename of log
 LOG -- log location
 HOSTNAME -- hostname
 PORT -- port
-```python
 ```
