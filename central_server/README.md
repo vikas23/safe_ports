@@ -66,7 +66,7 @@ Store the information in database schema
 
 
 # config
-
+```python
 config file should containt relevant information mentioned below:
 ENVIRONMENT -- system enviornment
 CONN_STRING -- database credentials
@@ -74,5 +74,5 @@ LOG_FILE_NAME -- filename of log
 LOG -- log location
 HOSTNAME -- hostname
 PORT -- port
-
+```python
 ```
