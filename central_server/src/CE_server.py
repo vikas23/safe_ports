@@ -8,11 +8,12 @@ app to receive POST request from data center to centeralized server
 
 import json
 import config
+import os
+import DumpData
 
 from flask import Flask, request, abort, Response
 from flask_cors import CORS
-
-import DumpData
+from flask import send_from_directory
 
 app = Flask(__name__)
 CORS(app)
@@ -55,6 +56,10 @@ def register_resource():
     json_body = {'message': 'Success'}
     return Response(json_body, mimetype='application/json')
 
+@app.route('/agent/<path:filename>', methods=['GET', 'POST'])
+def download(filename):
+    uploads = os.path.join(app.root_path, config.env['AGENT'])
+    return send_from_directory(directory=uploads, filename=filename)
 
 if __name__ == '__main__':
     print("App is running in %s on port %s" % (config.env['ENVIRONMENT'], config.env['PORT']))
