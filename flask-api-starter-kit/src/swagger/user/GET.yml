@@ -1,0 +1,17 @@
+Return an user key information based on his name
+---
+tags:
+  - user
+parameters:
+  - name: user_name
+    in: path
+    type: string
+    description: the name of the user
+responses:
+  200:
+    description: The user's information were successfully retrieved
+    schema:
+      example:
+        user:
+          last_name: Doe
+          first_name: John

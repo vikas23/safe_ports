@@ -1,0 +1,19 @@
+Return an device key information based on his name
+---
+tags:
+  - device
+parameters:
+  - _id: _id
+    in: path
+    type: string
+    description: the id of the device
+responses:
+  200:
+    description: The device's information were successfully retrieved
+    schema:
+      example:
+        device:
+          _id: axypk191rde
+          name: Vikas-Ubuntu
+          osinfo: ubuntu-14.04
+          networkDevices: Array-of-networkDevices

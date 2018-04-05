@@ -1,0 +1,36 @@
+Create an device based on the sent information
+---
+tags:
+  - device
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        name:
+          properties:
+            type: string
+            description: name of the device
+        osinfo:
+          properties:
+            type: string
+            description: os information of the device
+        networkDevices:
+          properties:
+            type: array
+            description: the network devices installed on the device
+        openPorts:
+          properties:
+            type: array
+            description: the open ports information while adding the device
+responses:
+  200:
+    description: The device was successfully added
+    schema:
+      example:
+        device:
+          _id: axypk191rde
+          name: Vikas-Ubuntu
+          osinfo: ubuntu-14.04
+          networkDevices: Array-of-networkDevices

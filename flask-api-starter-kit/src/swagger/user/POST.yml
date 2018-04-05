@@ -1,0 +1,33 @@
+Create an user based on the sent information
+---
+tags:
+  - user
+parameters:
+  - name: user_name
+    in: path
+    type: string
+    description: the name of the user
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        password:
+          type: string
+          description: password stored for the user
+        user_email:
+          properties:
+            type: string
+            description: the email of the user_email
+        is_safe:
+          type: boolean
+          description: is the user admin
+responses:
+  200:
+    description: The user was successfully created
+    schema:
+      example:
+        user:
+          user_email: admin@safeports.com
+          user_name: SAfeport
+          is_safe: false
